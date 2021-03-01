@@ -1,0 +1,30 @@
+{
+  "name": "webapp1",
+  "version": "1.0.0",
+  "description": "Preparatory Assessment #3",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksrtancio/webapp1.git"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "weather-app"
+  ],
+  "author": "Kyle Tancio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksrtancio/webapp1/issues"
+  },
+  "homepage": "https://github.com/ksrtancio/webapp1#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "got": "^11.8.2",
+    "weather-js": "^2.0.0"
+  }
+}
