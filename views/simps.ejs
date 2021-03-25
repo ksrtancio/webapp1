@@ -1,0 +1,61 @@
+<html>
+    <%- include('./partials/header', title, page)%>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home"><img src="/carrot.png" alt="" width="50" height="50">Usada Constructions</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link <%if (page=='home'){%>active<%}%>" aria-current="page" href="/home">Home</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link <%if (page=='contact'){%>active<%}%>" aria-current="page" href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-sm mt-5">
+            <img src="https://www.countryflags.io/<%=code%>/flat/48.png">
+            <h3><%= country%></h3>
+            <h4><%= date%></h4>
+            <h5><%= time%></h5>
+        </div>
+
+        <div class="container-sm mt-2">
+            <form action="/create-simp/<%= timecode%>" method="GET">
+                <button type="submit" class="btn btn-primary px-4 mt-2">Add simp</button>
+            </form>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Simp Nationality</th>
+                    <th scope="col">Birthdate</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% if (simps.length < 1){%>
+                    <tr>
+                        <td colspan="5">No data available.</td>
+                    </tr>
+                <%} else {%>
+                <% for (i=0; i < simps.length; i++){%>
+                    <tr>
+                        <th scope="row"><%= i%></th>
+                        <td><%= simps[i].name%></td>
+                        <td><%= simps[i].nationality%></td>
+                        <td><%= simps[i].birthdate%></td>
+                        <td><a href="/view-simp/<%= simps[i]._id%>">View</a></td>
+                    </tr>
+                <%}}%>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

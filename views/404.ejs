@@ -1,5 +1,27 @@
 <html>
+    <%- include('./partials/header', title, page)%>
     <body>
-        <h1>404</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home"><img src="/carrot.png" alt="" width="50" height="50">Usada Constructions</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link <%if (page=='home'){%>active<%}%>" aria-current="page" href="/home">Home</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link <%if (page=='contact'){%>active<%}%>" aria-current="page" href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <img class="d-block mx-auto" src="2a6.jpg" alt="404" style="width: 700;">
+            <h1 class="mx-auto text-center"> 404 construction not foud.</h1>
+        </div>
+
     </body>
 </html>
